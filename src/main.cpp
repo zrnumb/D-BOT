@@ -60,7 +60,7 @@ void setup() {
     
     dbot_init();
     // HWSerial.begin(115200);
-    log_i("init App...");
+    log_i("init Apptest...");
     App_Init();
     // INIT_DONE();
 }

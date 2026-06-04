@@ -64,7 +64,7 @@ void UDPComm::Loop() {
         udp_.read(buffer, packetSize);
         buffer[packetSize] = '\0'; // Ensure null-terminated string
         log_i("receved udp msg: %s", buffer);
-        JsonDocument jsonDoc;
+        DynamicJsonDocument jsonDoc(1024);
         deserializeJson(jsonDoc, buffer);
 
         if (recvCallback_) {

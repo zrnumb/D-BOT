@@ -29,7 +29,7 @@ void HAL::Init()
     log_system(SYSTEM_INFO, "init audio...");
     audio_init();
     delay(500);
-    log_system(SYSTEM_INFO, "init system...");
+    log_system(SYSTEM_INFO, "init system123...");
     system_init();
     log_system(SYSTEM_INFO, "init network...");
     network_init();

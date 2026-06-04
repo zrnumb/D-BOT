@@ -23,7 +23,7 @@ private:
         
         log_i("receved msg from %s\n", mac);
         if (activeInstance->recv_cb_) {
-            JsonDocument doc;
+            DynamicJsonDocument doc(1024);
             DeserializationError error = deserializeJson(doc, data, len);
             if (!error) {
                 activeInstance->recv_cb_(doc);

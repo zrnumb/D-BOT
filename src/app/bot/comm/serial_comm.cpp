@@ -24,7 +24,7 @@ void SerialComm::SetRecvCallback(RecvCallback callback) {
 void SerialComm::Loop() {
     if (_recvCallback && _serial.available()) {
         String input = _serial.readStringUntil('\n');
-        JsonDocument doc;
+        DynamicJsonDocument doc(1024);
         DeserializationError error = deserializeJson(doc, input);
         if (!error) {
             _recvCallback(doc);

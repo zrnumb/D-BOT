@@ -88,8 +88,8 @@ Account::~Account()
     /* Release cache */
     if(priv.BufferSize)
     {
-        delete priv.BufferManager.buffer[0];
-        delete priv.BufferManager.buffer[1];
+        delete[] static_cast<char*>(priv.BufferManager.buffer[0]);
+        delete[] static_cast<char*>(priv.BufferManager.buffer[1]);
     }
 
     /* Delete timer */
